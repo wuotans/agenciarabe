@@ -33,7 +33,7 @@ export default function ContatoSection() {
               Fale com a gente e descubra como podemos fortalecer o engajamento, a comunicação interna e gerar resultados reais.
             </p>
             <a
-              href="https://wa.me/5500000000000"
+              href="https://wa.me/556581560892"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-[#25D366] text-white px-8 py-4 rounded-full text-sm font-semibold whitespace-nowrap hover:bg-[#20BD5C] transition-all duration-300 group flex-shrink-0"

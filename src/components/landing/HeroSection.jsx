@@ -26,7 +26,13 @@ export default function HeroSection({ heroImage }) {
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 0.06 }}
         transition={{ duration: 2, delay: 1 }}
-        className="absolute right-0 bottom-12 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2 text-[12rem] lg:text-[22rem] font-heading font-black text-alabaster leading-none select-none pointer-events-none hidden md:block"
+        className="absolute right-0 bottom-12 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2 text-[12rem] lg:text-[22rem] font-heading font-black text-alabaster leading-none select-none pointer-events-none hidden md:block overflow-visible whitespace-nowrap px-4"
+        style={{ 
+          overflow: 'visible',
+          whiteSpace: 'nowrap',
+
+          paddingRight: '390px'
+        }}
       >
         rabe
       </motion.span>
@@ -74,7 +80,7 @@ export default function HeroSection({ heroImage }) {
             className="flex flex-col gap-3"
           >
             <a
-              href="https://wa.me/5500000000000"
+              href="https://wa.me/556581560892"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-alabaster text-obsidian px-8 py-4 rounded-full text-sm font-semibold w-fit hover:bg-bronze hover:text-obsidian transition-all duration-300 group"
