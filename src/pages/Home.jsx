@@ -10,7 +10,7 @@ import Footer from '@/components/landing/Footer';
 const HERO_IMAGE = '/Pessoas_Reuniao_Colegas_de_Trabalho_Conversa_Descontraida_no_Escritorio.jpeg';
 const LOGO_BRANCA = '/logo_rabe_branca.png';
 const LOGO_PRETA = '/logo_rabe_sem_fundo.png';
-const PALESTRAS_IMAGE = 'https://media.base44.com/images/public/6a22da4c17e9662b46f5b518/4d9415cba_generated_498c28aa.png';
+const PALESTRAS_IMAGE = '/Planejamento-ADPV2-3.png'; // ← ALTERE AQUI
 
 export default function Home() {
   return (
@@ -29,7 +29,7 @@ export default function Home() {
       <div id="contato">
         <ContatoSection />
       </div>
-      <Footer />
+      <Footer logoBranca={LOGO_BRANCA} />
     </div>
   );
 }

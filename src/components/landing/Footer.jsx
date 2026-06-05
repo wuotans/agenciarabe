@@ -1,12 +1,17 @@
 import { motion } from 'framer-motion';
 
-export default function Footer() {
+export default function Footer({ logoBranca }) {
   return (
     <footer className="py-8 lg:py-10 bg-obsidian border-t border-white/5">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-4">
-        {/* Left */}
+        {/* Left - Com a logo MAIOR */}
         <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6">
-          <span className="text-alabaster font-heading font-black text-2xl tracking-tight">rabe</span>
+          {/* Logo aumentada */}
+          <img 
+            src={logoBranca} 
+            alt="Agência RABE" 
+            className="h-14 md:h-16 lg:h-20 w-auto object-contain"
+          />
           <div className="text-center sm:text-left">
             <p className="text-concrete text-xs font-semibold">Gestão de Endomarketing & Social</p>
             <p className="text-concrete/60 text-xs">Estratégia que conecta pessoas e impulsiona resultados.</p>
@@ -16,7 +21,7 @@ export default function Footer() {
         {/* Social Icons */}
         <div className="flex items-center gap-4">
           <a
-            href="https://linkedin.com"
+            href="https://linkedin.com/company/agenciarabe"
             target="_blank"
             rel="noopener noreferrer"
             className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-concrete hover:text-alabaster hover:border-bronze/40 transition-all duration-300"
@@ -27,7 +32,7 @@ export default function Footer() {
             </svg>
           </a>
           <a
-            href="https://instagram.com"
+            href="https://instagram.com/agenciarabe"
             target="_blank"
             rel="noopener noreferrer"
             className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-concrete hover:text-alabaster hover:border-bronze/40 transition-all duration-300"
