@@ -9,41 +9,44 @@ import ScrollToTop from './components/ScrollToTop';
 import Home from '@/pages/Home';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-// Add page imports here
+
+// Importe sua logo
+import LogoRabe from '/logo_rabe_sem_fundo.png';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
 
-  // Show loading spinner while checking app public settings or auth
   if (isLoadingPublicSettings || isLoadingAuth) {
     return (
       <div className="fixed inset-0 flex items-center justify-center bg-obsidian">
         <motion.div
           animate={{ 
-            scale: [1, 1.2, 1],
-            rotate: [0, 360],
+            scale: [1, 1.1, 1],
+            opacity: [0.8, 1, 0.8]
           }}
-          transition={{ duration: 1, repeat: Infinity }}
-          className="text-bronze text-4xl md:text-6xl font-bold font-heading"
+          transition={{ duration: 1.5, repeat: Infinity }}
+          className="flex flex-col items-center gap-4"
         >
-          RABE
+          <img 
+            src={LogoRabe} 
+            alt="Agência RABE" 
+            className="h-20 md:h-28 w-auto"
+            style={{ filter: 'brightness(0) invert(1)' }}
+          />
         </motion.div>
       </div>
     );
   }
 
-  // Handle authentication errors
   if (authError) {
     if (authError.type === 'user_not_registered') {
       return <UserNotRegisteredError />;
     } else if (authError.type === 'auth_required') {
-      // Redirect to login automatically
       navigateToLogin();
       return null;
     }
   }
 
-  // Render the main app
   return (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -51,7 +54,6 @@ const AuthenticatedApp = () => {
     </Routes>
   );
 };
-
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -68,13 +70,18 @@ function App() {
       <div className="fixed inset-0 bg-obsidian flex items-center justify-center z-50">
         <motion.div
           animate={{ 
-            scale: [1, 1.2, 1],
-            rotate: [0, 360],
+            scale: [1, 1.1, 1],
+            opacity: [0.8, 1, 0.8]
           }}
-          transition={{ duration: 1, repeat: Infinity }}
-          className="text-bronze text-4xl md:text-6xl font-bold font-heading"
+          transition={{ duration: 1.5, repeat: Infinity }}
+          className="flex flex-col items-center gap-4"
         >
-          RABE
+          <img 
+            src={LogoRabe} 
+            alt="Agência RABE" 
+            className="h-24 md:h-32 w-auto"
+            style={{ filter: 'brightness(0) invert(1)' }}
+          />
         </motion.div>
       </div>
     );
@@ -90,7 +97,7 @@ function App() {
         <Toaster />
       </QueryClientProvider>
     </AuthProvider>
-  )
-} 
+  );
+}
 
-export default App
+export default App;
