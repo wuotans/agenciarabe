@@ -7,6 +7,8 @@ import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
 import Home from '@/pages/Home';
+import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -15,8 +17,17 @@ const AuthenticatedApp = () => {
   // Show loading spinner while checking app public settings or auth
   if (isLoadingPublicSettings || isLoadingAuth) {
     return (
-      <div className="fixed inset-0 flex items-center justify-center">
-        <div className="w-8 h-8 border-4 border-slate-200 border-t-slate-800 rounded-full animate-spin"></div>
+      <div className="fixed inset-0 flex items-center justify-center bg-obsidian">
+        <motion.div
+          animate={{ 
+            scale: [1, 1.2, 1],
+            rotate: [0, 360],
+          }}
+          transition={{ duration: 1, repeat: Infinity }}
+          className="text-bronze text-4xl md:text-6xl font-bold font-heading"
+        >
+          RABE
+        </motion.div>
       </div>
     );
   }
@@ -43,6 +54,31 @@ const AuthenticatedApp = () => {
 
 
 function App() {
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (showSplash) {
+    return (
+      <div className="fixed inset-0 bg-obsidian flex items-center justify-center z-50">
+        <motion.div
+          animate={{ 
+            scale: [1, 1.2, 1],
+            rotate: [0, 360],
+          }}
+          transition={{ duration: 1, repeat: Infinity }}
+          className="text-bronze text-4xl md:text-6xl font-bold font-heading"
+        >
+          RABE
+        </motion.div>
+      </div>
+    );
+  }
 
   return (
     <AuthProvider>
@@ -55,6 +91,6 @@ function App() {
       </QueryClientProvider>
     </AuthProvider>
   )
-}
+} 
 
 export default App
