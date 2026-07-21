@@ -111,12 +111,19 @@
   width: 11px !important;
 }
 
-/* CTA final: logo oficial maior dentro da esfera */
+/* CTA final: esfera centralizada dentro da terceira coluna */
 .final-cta__sphere {
   width: 205px !important;
   height: 205px !important;
   display: grid !important;
   place-items: center !important;
+  justify-self: center !important;
+  align-self: center !important;
+  right: auto !important;
+  top: auto !important;
+  position: relative !important;
+  margin: 0 auto !important;
+  transform: translateX(-18px) !important;
 }
 
 .final-cta__sphere::after {
