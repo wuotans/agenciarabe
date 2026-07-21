@@ -1,0 +1,33 @@
+/* Ajuste final da arte principal no mobile */
+@media (max-width: 590px) {
+  .hero__art {
+    left: 50% !important;
+    right: auto !important;
+    top: 250px !important;
+    width: 430px !important;
+    height: 430px !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .orbital-scene {
+    width: 430px !important;
+    margin-inline: auto !important;
+    transform: rotate(-9deg) !important;
+    transform-origin: center !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero__art {
+    left: 50% !important;
+    right: auto !important;
+    top: 260px !important;
+    width: 400px !important;
+    height: 400px !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .orbital-scene {
+    width: 400px !important;
+  }
+}
