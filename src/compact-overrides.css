@@ -280,18 +280,24 @@
     height: 32px !important;
   }
 
-  /* Hero mobile: evita cortes, estouro horizontal e esfera desproporcional */
+  /* Hero mobile: conteúdo à frente e arte como fundo discreto */
   .topbar {
     width: calc(100% - 32px) !important;
   }
 
   .hero {
+    position: relative !important;
     width: calc(100% - 32px) !important;
+    min-height: 720px !important;
     padding-top: 104px !important;
-    padding-bottom: 34px !important;
+    padding-bottom: 70px !important;
+    overflow: hidden !important;
+    isolation: isolate !important;
   }
 
   .hero__copy {
+    position: relative !important;
+    z-index: 4 !important;
     width: 100% !important;
     min-width: 0 !important;
   }
@@ -314,6 +320,8 @@
   }
 
   .hero__actions {
+    position: relative !important;
+    z-index: 5 !important;
     width: 100% !important;
     gap: 16px !important;
     margin-top: 26px !important;
@@ -325,35 +333,70 @@
   }
 
   .hero__art {
-    width: 100% !important;
-    min-height: 330px !important;
-    height: 330px !important;
-    margin: 18px 0 0 !important;
-    overflow: hidden !important;
+    position: absolute !important;
+    z-index: 1 !important;
+    inset: 230px -90px auto auto !important;
+    width: 430px !important;
+    height: 430px !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    opacity: .24 !important;
+    pointer-events: none !important;
   }
 
   .orbital-scene {
-    width: min(390px, 108vw) !important;
+    width: 430px !important;
     max-width: none !important;
-    transform: translateX(-1%) !important;
+    transform: rotate(-9deg) !important;
   }
 
-  .small-sphere--one {
-    right: 5% !important;
+  .brand-sphere {
+    width: 50% !important;
+    left: 27% !important;
+    top: 15% !important;
+    opacity: .9 !important;
   }
 
-  .small-sphere--two {
-    right: 0 !important;
+  .brand-sphere::after {
+    display: none !important;
+  }
+
+  .small-sphere {
+    display: none !important;
+  }
+
+  .orbit-ring {
+    opacity: .55 !important;
+    filter: blur(.2px) drop-shadow(0 8px 8px rgba(0,0,0,.55)) !important;
+  }
+
+  .orbit-ring--front {
+    opacity: .35 !important;
+  }
+
+  .orbital-glow {
+    opacity: .45 !important;
   }
 }
 
 @media (max-width: 390px) {
+  .hero {
+    min-height: 700px !important;
+  }
+
   .hero h1 {
     font-size: clamp(35px, 10.8vw, 42px) !important;
   }
 
+  .hero__art {
+    inset: 245px -110px auto auto !important;
+    width: 400px !important;
+    height: 400px !important;
+    opacity: .22 !important;
+  }
+
   .orbital-scene {
-    width: 104vw !important;
-    transform: translateX(-2%) !important;
+    width: 400px !important;
   }
 }
