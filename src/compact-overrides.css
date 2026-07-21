@@ -16,7 +16,12 @@
   z-index: 6;
 }
 
-/* Corrige os anéis: remove o recorte que fazia um deles parecer incompleto */
+/* Mantém a esfera acima de todos os anéis */
+.brand-sphere {
+  z-index: 5 !important;
+}
+
+/* Corrige os anéis: completos e sempre atrás da esfera */
 .orbit-ring {
   border: 9px solid #666 !important;
   border-top-color: #dedede !important;
@@ -24,17 +29,20 @@
   border-bottom-color: #353535 !important;
   border-left-color: #858585 !important;
   overflow: visible !important;
-}
-
-.orbit-ring--back {
-  clip-path: none !important;
-  opacity: .78 !important;
   z-index: 1 !important;
 }
 
+.orbit-ring--back,
 .orbit-ring--front {
   clip-path: none !important;
-  z-index: 4 !important;
+  z-index: 1 !important;
+}
+
+.orbit-ring--back {
+  opacity: .78 !important;
+}
+
+.orbit-ring--front {
   opacity: .92 !important;
 }
 
