@@ -136,6 +136,26 @@
   z-index: 2;
 }
 
+/* Rodapé mais fino: remove as colunas de navegação e soluções */
+.footer__column {
+  display: none !important;
+}
+
+.footer {
+  grid-template-columns: 1.2fr .9fr !important;
+  gap: 32px !important;
+  padding-top: 32px !important;
+  align-items: start !important;
+}
+
+.footer__contact {
+  justify-self: end !important;
+}
+
+.footer__bottom {
+  margin-top: 4px !important;
+}
+
 @media (max-width: 1100px) {
   .solution-card {
     min-height: 320px !important;
@@ -151,6 +171,10 @@
 
   .final-cta__sphere {
     display: none !important;
+  }
+
+  .footer {
+    grid-template-columns: 1fr 1fr !important;
   }
 }
 
@@ -171,5 +195,14 @@
 
   .orbit-ring {
     border-width: 6px !important;
+  }
+
+  .footer {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .footer__contact {
+    justify-self: start !important;
   }
 }
