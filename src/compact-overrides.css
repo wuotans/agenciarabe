@@ -136,56 +136,71 @@
   z-index: 2;
 }
 
-/* Rodapé realmente compacto */
-.footer__column {
+/* Rodapé horizontal, fino e sem espaços vazios */
+.footer__column,
+.footer__contact,
+.footer__bottom {
   display: none !important;
 }
 
 .footer {
-  grid-template-columns: 1.2fr .9fr !important;
-  column-gap: 32px !important;
-  row-gap: 12px !important;
-  padding-top: 18px !important;
-  padding-bottom: 0 !important;
-  align-items: start !important;
+  display: grid !important;
+  grid-template-columns: 58px minmax(0, 1fr) auto !important;
+  align-items: center !important;
+  gap: 18px !important;
+  min-height: 0 !important;
+  margin-top: 58px !important;
+  padding: 20px 0 !important;
+  border-top: 1px solid rgba(255,255,255,.08) !important;
 }
 
-.footer__brand img {
-  width: 92px !important;
+.footer__brand {
+  display: contents !important;
 }
 
-.footer__brand p {
-  width: 220px !important;
-  margin: 8px 0 10px !important;
-  line-height: 1.45 !important;
-}
-
-.socials {
-  margin-top: 8px !important;
-}
-
-.footer__contact {
-  justify-self: end !important;
-  gap: 6px !important;
-}
-
-.footer__contact strong {
-  margin-bottom: 2px !important;
-}
-
-.footer__contact p {
+.footer__brand > img {
+  grid-column: 1 !important;
+  width: 54px !important;
+  height: auto !important;
   margin: 0 !important;
 }
 
-.footer__contact .outline-button {
-  min-height: 36px !important;
-  margin: 3px 0 5px !important;
-  padding-inline: 15px !important;
+.footer__brand > p {
+  grid-column: 2 !important;
+  width: auto !important;
+  max-width: 430px !important;
+  margin: 0 !important;
+  font-size: 11px !important;
+  line-height: 1.35 !important;
+  color: rgba(255,255,255,.45) !important;
 }
 
-.footer__bottom {
-  margin-top: 0 !important;
-  padding: 10px 0 12px !important;
+.footer__brand > p::before {
+  content: 'Gestão de Endomarketing & Social';
+  display: block;
+  margin-bottom: 3px;
+  color: rgba(255,255,255,.72);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.socials {
+  grid-column: 3 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+  margin: 0 !important;
+}
+
+.socials a {
+  width: 36px !important;
+  height: 36px !important;
+}
+
+.socials svg {
+  width: 15px !important;
+  height: 15px !important;
 }
 
 @media (max-width: 1100px) {
@@ -206,7 +221,14 @@
   }
 
   .footer {
-    grid-template-columns: 1fr 1fr !important;
+    grid-template-columns: 48px minmax(0, 1fr) auto !important;
+    gap: 14px !important;
+    margin-top: 42px !important;
+    padding: 18px 0 !important;
+  }
+
+  .footer__brand > img {
+    width: 46px !important;
   }
 }
 
@@ -230,16 +252,31 @@
   }
 
   .footer {
-    grid-template-columns: 1fr !important;
-    gap: 14px !important;
-    padding-top: 16px !important;
+    grid-template-columns: 42px minmax(0, 1fr) !important;
+    gap: 12px !important;
+    padding: 16px 0 !important;
   }
 
-  .footer__contact {
-    justify-self: start !important;
+  .footer__brand > img {
+    width: 40px !important;
   }
 
-  .footer__bottom {
-    padding-bottom: 10px !important;
+  .footer__brand > p {
+    font-size: 10px !important;
+  }
+
+  .footer__brand > p::before {
+    font-size: 11px !important;
+  }
+
+  .socials {
+    grid-column: 1 / -1 !important;
+    justify-content: flex-start !important;
+    padding-left: 54px !important;
+  }
+
+  .socials a {
+    width: 32px !important;
+    height: 32px !important;
   }
 }
