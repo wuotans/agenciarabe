@@ -3,6 +3,7 @@ import Home from '@/pages/Home';
 import ScrollToTop from '@/components/ScrollToTop';
 import './rabe-adjustments.css';
 import './compact-overrides.css';
+import './mobile-hero-overrides.css';
 
 export default function App() {
   return (
