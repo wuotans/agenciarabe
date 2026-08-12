@@ -1,39 +1,135 @@
-**Welcome to your Base44 project** 
+# Agência Rabe
 
-**About**
+Site institucional da Agência Rabe, desenvolvido em React e Vite, com foco em apresentar serviços de marketing, tecnologia, automação, inteligência artificial, desenvolvimento web e comunicação estratégica.
 
-View and Edit  your app on [Base44.com](http://Base44.com) 
+## Tecnologias
 
-This project contains everything you need to run your app locally.
+- React 18
+- Vite
+- React Router
+- Tailwind CSS
+- Framer Motion
+- Lucide React
+- Radix UI
 
-**Edit the code in your local development environment**
+## Requisitos
 
-Any change pushed to the repo will also be reflected in the Base44 Builder.
+- Node.js 18 ou superior
+- npm
 
-**Prerequisites:** 
+## Instalação
 
-1. Clone the repository using the project's Git URL 
-2. Navigate to the project directory
-3. Install dependencies: `npm install`
-4. Create an `.env.local` file and set the right environment variables
+Clone o repositório e instale as dependências:
 
+```bash
+git clone https://github.com/wuotans/agenciarabe.git
+cd agenciarabe
+npm install
 ```
-VITE_BASE44_APP_ID=your_app_id
-VITE_BASE44_APP_BASE_URL=your_backend_url
 
-e.g.
-VITE_BASE44_APP_ID=cbef744a8545c389ef439ea6
-VITE_BASE44_APP_BASE_URL=https://my-to-do-list-81bfaad7.base44.app
+## Desenvolvimento local
+
+Execute:
+
+```bash
+npm run dev
 ```
 
-Run the app: `npm run dev`
+O Vite iniciará o projeto localmente, normalmente em:
 
-**Publish your changes**
+```text
+http://localhost:5173
+```
 
-Open [Base44.com](http://Base44.com) and click on Publish.
+## Build de produção
 
-**Docs & Support**
+```bash
+npm run build
+```
 
-Documentation: [https://docs.base44.com/Integrations/Using-GitHub](https://docs.base44.com/Integrations/Using-GitHub)
+Os arquivos compilados serão gerados em `dist/`.
 
-Support: [https://app.base44.com/support](https://app.base44.com/support)
+Para visualizar o build localmente:
+
+```bash
+npm run preview
+```
+
+## Variáveis de ambiente
+
+O site institucional atual funciona sem backend obrigatório.
+
+Caso recursos futuros precisem consumir uma API, utilize:
+
+```env
+VITE_API_URL=http://localhost:3000/api
+```
+
+Se `VITE_API_URL` não estiver definida, `src/api/apiClient.js` utiliza `/api` como endereço padrão.
+
+## Estrutura principal
+
+```text
+src/
+├── api/
+│   └── apiClient.js
+├── components/
+├── hooks/
+├── lib/
+├── pages/
+│   └── Home.jsx
+├── utils/
+├── App.jsx
+├── main.jsx
+└── index.css
+```
+
+## Página principal
+
+A Home apresenta as principais áreas de atuação da Agência Rabe, incluindo:
+
+- Aplicativos e sistemas
+- Automação com inteligência artificial
+- Sites e landing pages
+- Social media estratégico
+- Design gráfico e identidade visual
+- Endomarketing e comunicação interna
+
+A página também apresenta o processo de trabalho da agência, posicionamento institucional e canais de contato.
+
+## Integração com API
+
+Toda nova integração HTTP deve ser centralizada em:
+
+```text
+src/api/apiClient.js
+```
+
+Isso mantém as páginas desacopladas da implementação do backend e facilita futuras integrações com sistemas próprios, CRM, formulários, automações e ferramentas internas.
+
+## Scripts disponíveis
+
+```bash
+npm run dev
+npm run build
+npm run preview
+npm run lint
+npm run lint:fix
+npm run typecheck
+```
+
+## Boas práticas
+
+- Não versionar `.env` ou `.env.local`.
+- Não versionar `node_modules/`.
+- Manter integrações externas centralizadas na camada `src/api/`.
+- Manter componentes reutilizáveis em `src/components/`.
+- Utilizar `npm run build` antes de publicar alterações relevantes.
+
+## Projeto
+
+Repositório oficial:
+
+```text
+https://github.com/wuotans/agenciarabe
+```
